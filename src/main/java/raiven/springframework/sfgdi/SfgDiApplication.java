@@ -3,8 +3,10 @@ package raiven.springframework.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import raiven.springframework.sfgdi.controllers.*;
 
+@ComponentScan(basePackages = {"raiven.springframework.sfgdi", "raiven.springframework.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 

@@ -1,4 +1,4 @@
-package raiven.springframework.sfgdi.services;
+package raiven.springframework.pets;
 
 public interface PetService {
 

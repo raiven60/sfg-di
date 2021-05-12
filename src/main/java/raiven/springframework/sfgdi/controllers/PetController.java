@@ -1,6 +1,6 @@
 package raiven.springframework.sfgdi.controllers;
 
-import raiven.springframework.sfgdi.services.PetService;
+import raiven.springframework.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 /**
