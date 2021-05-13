@@ -4,15 +4,22 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
+import raiven.springframework.sfgdi.repositories.EnglishGreetingRepository;
+import raiven.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import raiven.springframework.sfgdi.services.*;
 
 @Configuration
 public class GreetingServiceConfig {
 
+    @Bean
+    EnglishGreetingRepository englishGreetingRepository(){
+        return new EnglishGreetingRepositoryImpl();
+    }
+
     @Profile("en")
     @Bean("i18nService")
-    I18nEnglishGreetingService i18nEnglishGreetingService(){
-        return new I18nEnglishGreetingService();
+    I18nEnglishGreetingService i18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository){
+        return new I18nEnglishGreetingService(englishGreetingRepository);
     }
 
     @Profile({"es","default"})
